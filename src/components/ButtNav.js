@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from "./elements/NavBar"
 import Content from  "./elements/Content"
+import Buttons from "./elements/Buttons"
 
 
 const initialState={
@@ -51,9 +52,12 @@ export default class ButtNav extends Component {
                 <br/>
                 <p id="stretch" className={this.state.bVisible}>Core Concepts</p>
                 <div  className={this.state.bVisible}>
-                    <button className="btn" onClick={this.JSX}>JSX</button>
+                    <Buttons callback={this.JSX} value="JSX"></Buttons>
+                    <Buttons callback={this.JS} value="Javascript Library"></Buttons>
+                    <Buttons callback={this.VDOM}value="Virtual DOM"></Buttons>
+                    {/* <button className="btn" onClick={this.JSX}>JSX</button>
                     <button className="btn" onClick={this.JS}>Javascript library</button>
-                    <button className="btn" onClick={this.VDOM}>Virtual DOM</button>
+                    <button className="btn" onClick={this.VDOM}>Virtual DOM</button> */}
                 </div>
             </div>
 
