@@ -42,26 +42,37 @@ export default class ButtNav extends Component {
         this.setState(initialState)
         }
     render() {
-        return (
-            <div className="large_body">
-                <NavBar title={this.state.title}  callback={this.parentFunction}/>
-                
-                <Content
-                     content={this.state.content}
-                />
-                <br/>
-                <p id="stretch" className={this.state.bVisible}>Core Concepts</p>
-                <div  className={this.state.bVisible}>
+        if(this.state.title==="React JS"){
+            return (
+                <div className="large_body">
+                    <NavBar title={this.state.title}  callback={this.parentFunction}/>
+                    
+                    <Content
+                         content={this.state.content}
+                    />
+                    <br/>
+                    <p id="stretch" className={this.state.bVisible}>Core Concepts</p>
+                    
                     <Buttons callback={this.JSX} value="JSX"></Buttons>
                     <Buttons callback={this.JS} value="Javascript Library"></Buttons>
                     <Buttons callback={this.VDOM}value="Virtual DOM"></Buttons>
-                    {/* <button className="btn" onClick={this.JSX}>JSX</button>
-                    <button className="btn" onClick={this.JS}>Javascript library</button>
-                    <button className="btn" onClick={this.VDOM}>Virtual DOM</button> */}
+                    <br/>
+                    
+                </div>
+    
+            )
+        }
+        else{
+            return (
+                <div className="large_body">
+                    <NavBar title={this.state.title}  callback={this.parentFunction}/>
+                    
+                    <Content
+                         content={this.state.content}
+                    />
                     <br/>
                 </div>
-            </div>
-
-        )
+            )
+        }
     }
 }
