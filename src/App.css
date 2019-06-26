@@ -19,6 +19,7 @@ border-bottom:2px solid rgb(206, 204, 204);
 .large_body{
   width:1000px; 
   margin:auto;
+  padding-bottom: 100px
   /* border:2px solid blue; */
 }
 .content{

@@ -6,7 +6,7 @@ export default class CommentInput extends Component {
     constructor(props){
         super(props)
         this.state={
-            comment:"hi stays",
+            comment:"",
         }
     }
 
@@ -15,10 +15,8 @@ export default class CommentInput extends Component {
             comment:event.target.value,
             letter:null,
             wordCount:null
-
         })
-        this.wordCountFunc()
-        this.letterCount()
+
     }
 
     handleFormSubmit=(event)=>{
@@ -29,17 +27,6 @@ export default class CommentInput extends Component {
         console.log(this.state.comment)
     }
 
-    wordCountFunc=()=>{
-        this.setState({
-            wordCount:this.state.comment.split(" ").length
-        })
-    }
-    
-    letterCount=()=>{
-        this.setState({
-            letters:this.state.comment.length,
-        }) 
-    }
 
     render() {
         return (
@@ -51,9 +38,10 @@ export default class CommentInput extends Component {
                             type="textarea"  
                             className="inputBox" 
                             placeholder="This is a sample input." 
+                            value={this.state.comment}
                             onChange={this.handleInputChange}
                         />
-                        <p>Your input contains {this.state.wordCount} words and {this.state.letters} characters</p>
+                        <p>Your input contains {this.state.comment.split(" ").length} words and {this.state.comment.length} characters</p>
                         <button type="submit">Submit</button>
                     </label>
                 </form>
