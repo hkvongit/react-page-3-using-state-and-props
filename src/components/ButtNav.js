@@ -41,15 +41,12 @@ export default class ButtNav extends Component {
     parentFunction = () => {
         this.setState(initialState)
         }
-    render() {
+
+    homePage(){
         if(this.state.title==="React JS"){
             return (
-                <div className="large_body">
-                    <NavBar title={this.state.title}  callback={this.parentFunction}/>
+                <div>
                     
-                    <Content
-                         content={this.state.content}
-                    />
                     <br/>
                     <p id="stretch" className={this.state.bVisible}>Core Concepts</p>
                     
@@ -62,7 +59,9 @@ export default class ButtNav extends Component {
     
             )
         }
-        else{
+    }
+    
+    render() {
             return (
                 <div className="large_body">
                     <NavBar title={this.state.title}  callback={this.parentFunction}/>
@@ -70,9 +69,9 @@ export default class ButtNav extends Component {
                     <Content
                          content={this.state.content}
                     />
-                    <br/>
+                    {this.homePage()}                    
                 </div>
+    
             )
-        }
     }
 }
